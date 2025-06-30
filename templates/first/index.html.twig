@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bienvenue sur Les Santons</title>
+        {{ encore_entry_link_tags('app') }}
+    </head>
+    <body class="first-page">
+        <div class="outer-container">
+            <div class="auth-links">
+                <a href="{{ path('app_login') }}" class="btn-auth">Connexion</a> |
+                <a href="{{ path('app_register') }}" class="btn-auth">Inscription</a>
+            </div>
+            <divclass="container">           
+                <div class="main-links">
+                    <a href="{{ path('app_login') }}" class="btn-main">Accéder au site</a>
+                    <a href="{{ path('app_galerie') }}" class="btn-main">Voir la galerie de Santons</a>
+                    <a href="{{ path('app_contact') }}" class="btn-main">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+        {{ encore_entry_script_tags('app') }}
+    </body>
+</html>

@@ -49,6 +49,11 @@ Encore
     // .configureBabel((config) => {
     //     config.plugins.push('@babel/a-babel-plugin');
     // })
+    .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[hash:8].[ext]',
+        pattern: /\.(png|jpg|jpeg|gif|ico|svg|webp)$/
+    })
 
     // enables and configure @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {

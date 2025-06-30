@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h2>{{ santon.nom }}</h2>
+        <img src="{{ vich_uploader_asset(santon, 'imageFile') }}" alt="{{ santon.nom }}" class="img-fluid mb-3">
+        <ul>
+            <li><strong>Extrait :</strong> {{ santon.extrait }}</li>
+            <li><strong>Valeur estimée :</strong> {{ santon.valeurEstimee }} €</li>
+        </ul>
+        <p>{{ santon.descriptionDetaillee }}</p>
+
+        <hr>
+        <h4>Commentaires</h4>
+        {% for commentaire in santon.commentaires %}
+            <div class="mb-2">
+                <strong>{{ commentaire.user.nom }}</strong> le {{ commentaire.createdAt|date('d/m/Y') }} :
+                <p>{{ commentaire.contenu }}</p>
+            </div>
+        {% else %}
+            <p>Aucun commentaire pour le moment.</p>
+        {% endfor %}
+
+        {% if app.user %}
+            {{ form_start(form) }}
+                {{ form_row(form.contenu) }}
+                <button class="btn btn-success">Ajouter un commentaire</button>
+            {{ form_end(form) }}
+        {% else %}
+            <p><a href="{{ path('app_login') }}">Connectez-vous</a> pour laisser un commentaire.</p>
+        {% endif %}
+    </div>
+{% endblock %}

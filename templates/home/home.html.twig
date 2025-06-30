@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="text-center">LES SANTONS</h1>
+        <p class="text-center">Les Santons ne sont pas que des figurines, ce sont des personnages à part entière, avec leurs manies, leurs défauts, leur accent et leur destin miniature.
+Certains bossent, d'autres râlent, et beaucoup ne savent pas trop ce qu'ils font là. On y trouve des rois mages égarés, des bergers blasés, des lavandières déterminées et un ravi qui lève les bras sans qu'on sache bien pourquoi.
+Ce site est leur sanctuaire : une collection sacrée "mais pas trop", un hommage en terre cuite à la vie quotidienne version crèche provençale.
+Ce n'est pas un musée, c'est un parchemin ouvert sur l'absurde, le beau, et parfois le franchement inutile."Verbis sanctus pastis et cabriolus minus."Ça ne veut rien dire, mais je trouve que ça image bien notre site pour les collections de Santons !</p>
+
+        <h2 class="mt-5">Derniers Santons ajoutés</h2>
+        <div class="row">
+            {% for santon in santons %}
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="{{ vich_uploader_asset(santon, 'imageFile') }}" class="card-img-top" alt="{{ santon.nom }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ santon.nom }}</h5>
+                            <p class="card-text">{{ santon.extrait }}</p>
+                            <a href="{{ path('show_santon', { id: santon.id }) }}" class="btn btn-primary">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p>Aucun Santon ajouté pour le moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,14 @@
+@use "../abstract/variable" as v;
+@use "../abstract/mixin" as m;
+
+
+@font-face {
+  font-family: 'MedievalSharp';
+  src: url('../../fonts/MedievalSharp-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: v.$font-medieval;
+}

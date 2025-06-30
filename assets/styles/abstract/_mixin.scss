@@ -1,0 +1,19 @@
+@use "../abstract/variable" as v;
+
+
+@mixin flex($fdir:row,$just:center,$align:center){
+    display:flex;
+    flex-direction: $fdir;
+    justify-content: $just;
+    align-items: $align;
+}
+@mixin button-style {
+  font-size: 24px;
+  padding: 10px 20px;
+  background-color: v.$color-bouton;
+  color: v.$color-texte;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px;
+  display: inline-block;
+}

@@ -1,0 +1,97 @@
+@use "../abstract/variable" as v;
+@use "../abstract/mixin" as m;
+
+
+.body {
+  background-image: v.$background-image;
+  background-size: cover;  
+  height: 100vh;
+  width: 100vw;  
+  display: flex;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav a {
+    color: v.$color-bouton;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.first-page {
+  background-image: v.$background-image;
+  background-size: cover;  
+  height: 100vh;
+  width: 100vw;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.outer-container {
+  background-image: v.$background-image-first; 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 100vh;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+  justify-content: space-between;
+  }
+.container {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-links {
+  padding-top: 2rem;
+}
+
+.title {
+  color: v.$color-cardinal;
+  font-size: 48px;
+  margin-bottom: 2rem;
+}
+
+.main-image {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.main-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;  
+}
+
+
+.btn-main {
+  @include m.button-style;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.btn-auth {
+  @include m.button-style;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.main-links {
+  margin-top: 20px;
+}

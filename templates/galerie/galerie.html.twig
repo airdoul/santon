@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie des Santons{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h2>Galerie des Santons</h2>
+        <div class="row">
+            {% for santon in santons %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ vich_uploader_asset(santon, 'imageFile') }}" class="card-img-top" alt="{{ santon.nom }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ santon.nom }}</h5>
+                            <p class="card-text">{{ santon.extrait }}</p>
+                            <a href="{{ path('show_santon', { id: santon.id }) }}" class="btn btn-secondary">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p>Aucun Santon pour le moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
