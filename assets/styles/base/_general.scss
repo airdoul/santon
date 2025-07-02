@@ -1,6 +1,6 @@
+@use 'sass:color';
 @use "../abstract/variable" as v;
 @use "../abstract/mixin" as m;
-
 
 @font-face {
   font-family: 'MedievalSharp';
@@ -9,6 +9,68 @@
   font-style: normal;
 }
 
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.site-body {
   font-family: v.$font-medieval;
+  background-image: v.$background-image;
+  background-size: cover;
+  background-attachment: fixed;
+  color: v.$color-texte;
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.site-main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  font-family: v.$font-medieval;
+  color: v.$color-titre;
+  text-align: center;
+}
+
+.sign {
+    color: v.$color-titre;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: v.$color-bouton;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        $hover-color: color.mix(black, v.$color-cardinal, 15%);
+        text-shadow: 
+            1px 1px 2px rgba(0, 0, 0, 0.7),
+            0 0 5px rgba(v.$color-bouton, 0.5);
+
+        &::after {
+            transform: scaleX(1);
+        }
+    }
 }

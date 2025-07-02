@@ -3,23 +3,23 @@
 {% block title %}Contact{% endblock %}
 
 {% block body %}
-    <div class="container mt-5">
+    <div class="contact-form-container">
         <h2>Contactez-nous</h2>
 
-        {{ form_start(form) }}
-            <div class="mb-3">
+        {{ form_start(form, {'attr': {'class': 'form'}}) }}
+            <div class="form-group">
                 {{ form_label(form.nom) }}
-                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+                {{ form_widget(form.nom, {'attr': {'class': 'form-input'}}) }}
             </div>
-            <div class="mb-3">
+            <div class="form-group">
                 {{ form_label(form.email) }}
-                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                {{ form_widget(form.email, {'attr': {'class': 'form-input'}}) }}
             </div>
-            <div class="mb-3">
+            <div class="form-group">
                 {{ form_label(form.message) }}
-                {{ form_widget(form.message, {'attr': {'class': 'form-control', 'rows': 5}}) }}
+                {{ form_widget(form.message, {'attr': {'class': 'form-input', 'rows': 5}}) }}
             </div>
-            <button type="submit" class="btn btn-success">Envoyer</button>
+            <button type="submit" class="btn-submit">Envoyer</button>
         {{ form_end(form) }}
     </div>
 {% endblock %}

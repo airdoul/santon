@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,30 +10,33 @@
         <link rel="icon" href="{{ asset('favicon.ico') }}">
         {{ encore_entry_link_tags('app') }}
     </head>
-    <body class="body">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="{{path('app_home')}}">Accueil</a></li>
-                    <li><a href="{{path('app_galerie')}}">Galerie</a></li>
-                    <li><a href="{{path('app_contact')}}">Contact</a></li>
+    <body class="site-body">
+        <header class="site-header">
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a class="logo" href="{{ path('app_home') }}"><img src="{{ asset('images/graal.png') }}" alt="logo"></a></li>
+                    <li><a href="{{ path('app_home') }}">Accueil</a></li>
+                    <li><a href="{{ path('app_galerie') }}">Galerie</a></li>
+                    <li><a href="{{ path('app_contact') }}">Contact</a></li>
                     {% if is_granted('ROLE_USER') %}
-                        <li><a href="{{path('add_santon')}}">Ajouter un Santon</a></li>
+                        <li><a href="{{ path('add_santon') }}">Ajouter un Santon</a></li>
                         {% if is_granted('ROLE_ADMIN') %}
-                            <li><a href="{{path('admin')}}">Dashboard Admin</a></li>
+                            <li><a href="{{ path('admin') }}">Dashboard Admin</a></li>
                         {% endif %}
-                        <li><a href="{{path('app_logout')}}">Se déconnecter</a></li>
+                        <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
                     {% else %}
-                        <li><a href="{{path('app_login')}}">Connexion</a></li>
-                        <li><a href="{{path('app_register')}}">Inscription</a></li>
+                        <div class="auth-links">
+                            <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                            <li><a href="{{ path('app_register') }}">Inscription</a></li>
+                        </div>
                     {% endif %}
                 </ul>
             </nav>
         </header>
-        <main>
+        <main class="site-main">
             {% block body %}{% endblock %}
         </main>
-        <footer>
+        <footer class="site-footer">
             <p>Coordonnées : Le Château de Pellefort, 26570 Saint-Agnan-en-Vercors</p>
             <p>Missa brevis et spiritus maxima ! Ça ne veut rien dire, mais ça donne le ton ! <br><br> Copyright © 2023 Bambam</p> 
         </footer>

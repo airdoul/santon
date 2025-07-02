@@ -1,0 +1,114 @@
+@use "../abstract/variable" as v;
+@use "../abstract/mixin" as m;
+
+.first-page {
+  background-image: v.$background-image;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+   @media (max-width: 768px) {    
+    background-image: v.$background-image-second;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
+.outer-container {
+  background-image: v.$background-image-first;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 55vh;
+  border-radius: 0 20px 20px 0;
+
+  @media (max-width: 768px) {    
+    background-image: none;
+    justify-content: center;
+    gap: 20vh;
+  }
+}
+
+.auth-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn-auth {
+  @include m.button-style;
+  font-size: 18px;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  color: v.$color-bouton;
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: v.$font-medieval;
+
+  @media (min-width: 768px) {
+    font-size: 48px;
+  }
+}
+
+.subtitle {
+  color: v.$color-bouton;
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-family: v.$font-medieval;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.main-image {
+  max-width: 120px;
+  margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    max-width: 150px;
+    margin-bottom: 40px;
+  }
+}
+
+.main-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-main {
+  @include m.button-style;
+  padding: 10px 15px;
+  width: 100%;
+  text-align: center;
+}

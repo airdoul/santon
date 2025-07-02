@@ -1,0 +1,12 @@
+@use "../abstract/variable" as v;
+@use "../abstract/mixin" as m;
+
+.site-footer {
+  flex-shrink: 0;
+  color: v.$color-cardinal;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  font-size: 18px;
+  @include m.text-outline;
+}

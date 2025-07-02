@@ -1,4 +1,11 @@
 @use 'base/general';
-@use 'layout/home';
-@use "abstract/mixin" as m;
-@use "abstract/variable" as v;
+@use 'abstract/mixin' as m;
+@use 'abstract/variable' as v;
+@use 'layout/header';
+@use 'layout/footer';
+@use 'components/card';
+@use 'components/button';
+@use 'components/form';
+@use 'pages/first-page';
+@use 'pages/home';
+@use 'pages/accueil';

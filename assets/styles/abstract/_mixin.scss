@@ -1,7 +1,7 @@
 @use "../abstract/variable" as v;
 
 
-@mixin flex($fdir:row,$just:center,$align:center){
+@mixin flex($fdir:row,$just:space-between,$align:center){
     display:flex;
     flex-direction: $fdir;
     justify-content: $just;
@@ -16,4 +16,44 @@
   border-radius: 5px;
   margin: 10px;
   display: inline-block;
+  
+  &::before {
+    content: 'cliquez';
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 130%;
+    height: 140%;
+    border-radius: 10px;
+    background: rgba(v.$color-bouton, 0.6);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    color: black;
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+@mixin text-outline($color: #000, $size: 1px) {
+  text-shadow: 
+    #{-$size} #{-$size} 0 $color,  
+    #{$size} #{-$size} 0 $color,
+    #{-$size}  #{$size} 0 $color,
+    #{$size}  #{$size} 0 $color;
 }
