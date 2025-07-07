@@ -8,7 +8,9 @@
         <div class="latest-santons-container">
             {% for santon in santons %}
                 <div class="santon-card-home">
-                    <img src="{{ vich_uploader_asset(santon, 'imageFile') }}" class="img" alt="{{ santon.nom }}">
+                    <div class="img-container">                    
+                        <img src="{{ vich_uploader_asset(santon, 'imageFile') }}" class="img" alt="{{ santon.nom }}">
+                    </div>
                     <div class="santon-info">
                         <h3>{{ santon.nom }}</h3>
                         <p>{{ santon.extrait }}</p>

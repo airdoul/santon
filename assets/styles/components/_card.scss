@@ -2,11 +2,15 @@
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
   gap: 1rem;
-  width: 100%;
-  max-width: 20vw;
+  justify-content: center;      
+  align-items: start;           
+  max-width: 80%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
+
 
 .card {
   background-color: rgba(v.$color-parchemin, 0.4);
@@ -15,38 +19,17 @@
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  img {
-    width: 30%;
-    height: 100%;
-    border-radius: 5px;
-    margin-bottom: 0.75rem;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    object-fit: cover;
-  }
 
-  h3 {
-    color: v.$color-cardinal;
-    font-size: 18px;
-    margin-bottom: 0.75rem;
-  }
-
-  p {
-    color: color-mix(in srgb, var(v.$color-texte), black 15%);
-    font-size: 14px;
-    margin-bottom: 1rem;
-  }
-
-  .voir-plus {
-    background-color: v.$color-bouton;
-    color: v.$color-texte;
-    padding: 0.5rem 0.75rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: color-mix(in srgb, var(--color-bouton), black 15%);
+    h3 {
+      color: v.$color-cardinal;
+      font-size: 18px;
+      margin-bottom: 0.75rem;
     }
-  }
+
+    p {
+      color: color-mix(in srgb, var(v.$color-texte), black 15%);
+      font-size: 14px;
+      margin-bottom: 1rem;
+    }
+
 }

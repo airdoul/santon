@@ -2,7 +2,7 @@
 @use "../abstract/mixin" as m;
 
 .contact-form-container {
-  max-width: 80vw;
+  width: 60vw;
   padding: 1rem;
   background-color: rgba(v.$color-parchemin, 0.4);
   border-radius: 10px;
@@ -16,6 +16,8 @@
 .form {
   .form-group {
     margin-bottom: 0.5rem;
+    display: block;
+    text-align: center;
   }
 
   label {
@@ -25,8 +27,8 @@
     color: v.$color-cardinal;
   }
 
-  .form-input {
-    width: 100%;
+  .form-input  {
+    width: 80%;
     padding: 0.2rem;
     border: 1px solid v.$color-cardinal;
     border-radius: 5px;
@@ -42,7 +44,7 @@
     }
   }
 
-  textarea.form-input {
+  textarea.form-inputl{
     resize: vertical;
   }
 

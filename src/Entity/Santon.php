@@ -118,7 +118,7 @@ class Santon
     {
         $this->imageFile = $imageFile;
 
-        if ($imageFile !== null) {
+        if ($imageFile) {
             $this->updatedAt = new \DateTimeImmutable();
         }
     }

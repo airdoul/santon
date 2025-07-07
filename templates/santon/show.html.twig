@@ -8,7 +8,9 @@
             <div class="santon-detail">
                 <h2>{{ santon.nom }}</h2>
                 <div class="santon-card-home">
-                    <img src="{{ vich_uploader_asset(santon, 'imageFile') }}" alt="{{ santon.nom }}" class="img">
+                    <div class= "img-container">
+                        <img src="{{ vich_uploader_asset(santon, 'imageFile') }}" alt="{{ santon.nom }}" class="img">
+                    </div>
                     <div class="santon-info">
                         <p><strong>Extrait :</strong> {{ santon.extrait }}</p>
                         <p><strong>Valeur estimée :</strong> {{ santon.valeurEstimee }} €</p>

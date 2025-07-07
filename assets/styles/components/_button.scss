@@ -1,9 +1,17 @@
 @use "../abstract/variable" as v;
 @use "../abstract/mixin" as m;
 
-.voir-plus {
-  @include m.button-style;
-  font-size: 14px;
-  padding: 5px 10px;
-}
+  .voir-plus {
+    @include m.button-style;
+    background-color: v.$color-bouton;
+    color: v.$color-texte;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--color-bouton), black 15%);
+    }
+  }
 

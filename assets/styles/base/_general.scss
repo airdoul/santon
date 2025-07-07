@@ -20,12 +20,14 @@ html, body {
   background-size: cover;
   background-attachment: fixed;
   color: v.$color-texte;
-  
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+.dashboard {
+  @include m.flex;
+}
 
 .site-main {
   flex: 1 0 auto;

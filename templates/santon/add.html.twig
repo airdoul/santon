@@ -4,31 +4,31 @@
 
 {% block body %}
     <div class="home-content">
-        <div class="container mt-5">
+        <div class="contact-form-container">
             <h2>{{ editMode ? 'Modifier' : 'Ajouter' }} un Santon</h2>
 
-            {{ form_start(form) }}
-                <div class="mb-3">
+            {{ form_start(form,{'attr': {'class': 'form'}}) }}
+                <div class="form-group">
                     {{ form_label(form.nom) }}
-                    {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_widget(form.nom, {'attr': {'class': 'form-input'}}) }}
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     {{ form_label(form.descriptionDetaillee) }}
-                    {{ form_widget(form.descriptionDetaillee, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_widget(form.descriptionDetaillee, {'attr': {'class': 'form-input'}}) }}
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     {{ form_label(form.valeurEstimee) }}
-                    {{ form_widget(form.valeurEstimee, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_widget(form.valeurEstimee, {'attr': {'class': 'form-input'}}) }}
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     {{ form_label(form.imageFile) }}
-                    {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_widget(form.imageFile, {'attr': {'class': 'form-input'}}) }}
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     {{ form_label(form.region) }}
-                    {{ form_widget(form.region, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_widget(form.region, {'attr': {'class': 'form-input'}}) }}
                 </div>
-                <button type="submit" class="btn btn-primary mt-3">
+                <button type="submit" class="btn btn-primary ">
                     {{ editMode ? 'Mettre à jour' : 'Ajouter' }}
                 </button>
             {{ form_end(form) }}

@@ -39,9 +39,6 @@ class SecurityController extends AbstractController
     #[Route(path: '/inscription', name: 'app_register')]
     public function register(Request $request,UserPasswordHasherInterface $passwordEncoder,EntityManagerInterface $entityManager,AuthenticationUtils $authenticationUtils): Response
     {
-        // Vérification si l'objet existe via l'injection de dependance
-        // Si injection de dependance = On est en Modification
-        // Sinon, on est un Creation et on créé l'objet
         
         $user = new User;
       
