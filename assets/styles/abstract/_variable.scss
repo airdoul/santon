@@ -1,8 +1,25 @@
 $color-parchemin: #f1e4c3;
 $color-cardinal: #c05f5f;
-$color-texte: #ffffff;
+$color-texte: #f4ebd9;
 $color-bouton: #c2a850;
 $color-titre: #3a4f7a;
+
+$gradient-parchemin-vertical: linear-gradient(
+  to bottom,
+  rgba(241, 228, 195, 0),
+  rgba(241, 228, 195, 0.2),
+  rgba(241, 228, 195, 0)
+);
+$gradient-parchemin-horizontal: linear-gradient(
+  to right,
+  rgba(241, 228, 195, 0),
+  rgba(241, 228, 195, 0.2),
+  rgba(241, 228, 195, 0)
+);
+
+$gradient-parchemin: 
+  $gradient-parchemin-vertical, 
+  $gradient-parchemin-horizontal;
 
 $font-medieval: 'MedievalSharp', sans-serif;
 

@@ -2,11 +2,16 @@
 @use "../abstract/mixin" as m;
 
 .site-footer {
+  font-size: 1.5rem;
   flex-shrink: 0;
   color: v.$color-cardinal;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   width: 100%;
-  font-size: 18px;
   @include m.text-outline;
+  background-image: v.$gradient-parchemin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

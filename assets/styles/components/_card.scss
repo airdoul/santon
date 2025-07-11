@@ -22,13 +22,13 @@
 
     h3 {
       color: v.$color-cardinal;
-      font-size: 18px;
+      font-size: 20px;
       margin-bottom: 0.75rem;
     }
 
     p {
-      color: color-mix(in srgb, var(v.$color-texte), black 15%);
-      font-size: 14px;
+      color: v.$color-texte;
+      font-size: 18px;
       margin-bottom: 1rem;
     }
 

@@ -1,0 +1,124 @@
+@use 'sass:color';
+@use "../abstract/variable" as v;
+@use "../abstract/mixin" as m;
+
+.burger-menu {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    
+    .shield, .bow {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .shield {
+        opacity: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid v.$color-cardinal;
+            border-radius: 0 0 50% 50% / 0 0 25% 25%;
+        }
+
+        span {
+            position: absolute;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background-color: v.$color-cardinal;
+            transition: all 0.3s ease;
+        }
+
+        .shield-top { top: 25%; }
+        .shield-middle { top: 50%; }
+        .shield-bottom { top: 75%; }
+    }
+
+    .bow {
+        opacity: 0;
+
+        .bow-arc {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 50%;
+            height: 20px;
+            border: 2px solid v.$color-cardinal;
+            border-bottom: none;
+            border-radius: 100% 100% 0 0;
+        }
+
+        .bow-arrow {
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            bottom: 25%;
+            width: 2px;
+            background-color: v.$color-cardinal;
+            transform: translateX(-50%);
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 10px;
+                height: 2px;
+                background-color: v.$color-cardinal;
+            }
+
+            &::before {
+                left: -4px;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                right: -4px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    &.active {
+        .shield { opacity: 0; }
+        .bow { opacity: 1; }
+    }
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 8%;
+        right: 0;
+        background-color: v.$color-parchemin;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        padding: 1rem;
+
+        &.active {
+            display: block;
+        }
+
+        .nav-list {
+            flex-direction: column;
+        }
+    }
+}

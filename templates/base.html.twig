@@ -12,9 +12,20 @@
     </head>
     <body class="site-body">
         <header class="site-header">
+        <a class="logo" href="{{ path('app_home') }}"><img src="{{ asset('graal.png') }}" alt="logo"></a>
+            <button class="burger-menu" aria-label="Menu">
+                <div class="shield">
+                    <span class="shield-top"></span>
+                    <span class="shield-middle"></span>
+                    <span class="shield-bottom"></span>
+                </div>
+                <div class="bow">
+                    <span class="bow-arc"></span>
+                    <span class="bow-arrow"></span>
+                </div>
+            </button>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a class="logo" href="{{ path('app_home') }}"><img src="{{ asset('images/graal.png') }}" alt="logo"></a></li>
                     <li><a href="{{ path('app_home') }}">Accueil</a></li>
                     <li><a href="{{ path('app_galerie') }}">Galerie</a></li>
                     <li><a href="{{ path('app_contact') }}">Contact</a></li>
@@ -25,10 +36,8 @@
                         {% endif %}
                         <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
                     {% else %}
-                        <div class="auth-links">
-                            <li><a href="{{ path('app_login') }}">Connexion</a></li>
-                            <li><a href="{{ path('app_register') }}">Inscription</a></li>
-                        </div>
+                        <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                        <li><a href="{{ path('app_register') }}">Inscription</a></li>
                     {% endif %}
                 </ul>
             </nav>

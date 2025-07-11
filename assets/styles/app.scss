@@ -1,12 +1,18 @@
-@use 'base/general';
 @use 'abstract/mixin' as m;
 @use 'abstract/variable' as v;
+
+@use 'base/general';
+
 @use 'layout/header';
 @use 'layout/footer';
+
 @use 'components/card';
 @use 'components/button';
 @use 'components/form';
+@use 'components/img';
+@use 'components/menu-burger';
+
 @use 'pages/first-page';
 @use 'pages/home';
 @use 'pages/accueil';
-@use 'components/img';
+@use 'pages/show';

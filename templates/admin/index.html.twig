@@ -1,10 +1,14 @@
 {% extends '@EasyAdmin/page/content.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+{% endblock %}
 
 {% block content %}
-    <div class=dashboard>
+    <div class="dashboard">
     <h1>Bienvenue dans l'administration du site Les Santons</h1> <br>
     <h2>"Utentis evanuit, pax regnat." Ça ne veut absolument rien dire..., mais quand tu vires un utilisateur, vérifie que c'était pas l’admin.</h2><br>
     <p>Utilisez le menu de gauche pour gérer les utilisateurs, les santons et les commentaires.</p> <br>
-    <a href="{{ path('app_home') }}" class="voir-plus">Retour au site</a>
+    <a href="{{ path('app_home') }}" class="btn voir-plus">Retour au site</a>
     </div>
 {% endblock %}
