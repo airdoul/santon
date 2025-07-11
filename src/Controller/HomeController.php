@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\SantonRepository;
 use App\Service\MessageGenerator;
+use App\Service\DateMessage;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,10 +13,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     private $messageGenerator;
+    private $dateMessage;
 
-    public function __construct(MessageGenerator $messageGenerator)
+    public function __construct(MessageGenerator $messageGenerator, DateMessage $dateMessage)
     {
         $this->messageGenerator = $messageGenerator;
+        $this->dateMessage = $dateMessage;
     }
 
     #[Route('/', name: 'app_home')]
@@ -26,11 +29,13 @@ class HomeController extends AbstractController
         }
 
         $santons = $santonRepository->findBy([], ['createdAt' => 'DESC'], 4);
-        $message = $this->messageGenerator->generateMessage();
+        $randomMessage = $this->messageGenerator->generateMessage();
+        $dateMessage = $this->dateMessage->getMessage();
 
         return $this->render('home/home.html.twig', [
             'santons' => $santons,
-            'message' => $message,
+            'randomMessage' => $randomMessage,
+            'dateMessage' => $dateMessage,
         ]);
     }
 }
