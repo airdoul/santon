@@ -25,6 +25,7 @@ class SantonSetType extends AbstractType
         ])
         ->add('prix', NumberType::class)
         ->add('santonIds', ChoiceType::class, [
+            'label' => 'Santons',
             'multiple' => true,
             'expanded' => true,
             'choices' => $options['santons'],
@@ -32,6 +33,7 @@ class SantonSetType extends AbstractType
             'choice_value' => 'id',
         ])
         ->add('regionIds', ChoiceType::class, [
+            'label' => 'Régions',
             'multiple' => true,
             'expanded' => true,
             'choices' => $options['regions'],
